@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import heroPhoto from '../assets/images/profile-3.png'
 import PillarsSection from '../components/PillarsSection'
 import ProofStrip from '../components/ProofStrip'
+import FramedImage from '../components/FramedImage'
 
 export default function Home() {
   return (
@@ -43,14 +44,11 @@ export default function Home() {
             Average results: 3.5x ROI &middot; 240% lead growth
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/30 to-blue-500/30 blur-3xl rounded-full" />
-            <img
-              src={heroPhoto}
-              alt="Jackson Mwaniki"
-              className="relative w-64 md:w-80 drop-shadow-2xl"
-            />
-          </div>
+          <FramedImage
+            src={heroPhoto}
+            alt="Jackson Mwaniki"
+            className="w-64 md:w-80"
+          />
         </div>
       </section>
 
