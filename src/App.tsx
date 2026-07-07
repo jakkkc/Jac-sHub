@@ -1,4 +1,5 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -11,17 +12,7 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <>
-      <nav className="flex gap-4 p-4 border-b border-white/10 text-sm">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/case-studies">Case Studies</Link>
-        <Link to="/methodology">Methodology</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/writing">Writing</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
