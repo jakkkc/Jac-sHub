@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import heroPhoto from '../assets/images/profile-3.png'
 import PillarsSection from '../components/PillarsSection'
+import ProofStrip from '../components/ProofStrip'
 
 export default function Home() {
   return (
@@ -54,6 +55,7 @@ export default function Home() {
       </section>
 
       <PillarsSection />
+      <ProofStrip />
     </>
   )
 }
