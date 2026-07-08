@@ -8,7 +8,7 @@ export default function About() {
       <p className="uppercase tracking-widest text-xs text-pink-400 mb-5">
         About
       </p>
-      <h1 className="uppercase text-5xl md:text-7xl leading-none mb-10">
+      <h1 className="uppercase text-4xl md:text-7xl leading-none mb-10">
         <span className="block text-slate-100">The story behind</span>
         <span className="block">
           <span className="text-blue-400">Nex</span>

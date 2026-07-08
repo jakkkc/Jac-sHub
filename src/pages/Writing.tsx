@@ -11,7 +11,7 @@ export default function Writing() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
       <p className="uppercase tracking-widest text-xs text-pink-400 mb-5">Writing</p>
-      <h1 className="uppercase text-5xl md:text-7xl leading-none mb-6">
+      <h1 className="uppercase text-4xl md:text-7xl leading-none mb-6">
         <span className="block text-slate-100">I write daily,</span>
         <span className="block">
           <span className="text-blue-400">never</span>{' '}

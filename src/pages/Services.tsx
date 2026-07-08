@@ -46,7 +46,7 @@ export default function Services() {
       <p className="uppercase tracking-widest text-xs text-pink-400 mb-5">
         Services
       </p>
-      <h1 className="uppercase text-5xl md:text-7xl leading-none mb-6">
+      <h1 className="uppercase text-4xl md:text-7xl leading-none mb-6">
         <span className="block text-slate-100">Pricing built for</span>
         <span className="block">
           <span className="text-blue-400">real Kenyan</span>{' '}

@@ -15,11 +15,11 @@ export default function Home() {
 
           <h1 className="uppercase leading-none mb-6 tracking-wide">
             <span className="block text-3xl md:text-4xl text-slate-100">Digital</span>
-            <span className="block text-6xl md:text-8xl text-slate-100">Aesthetics</span>
+            <span className="block text-4xl md:text-8xl text-slate-100">Aesthetics</span>
             <span className="block text-3xl md:text-4xl text-blue-400 mt-2">
               Digital
             </span>
-            <span className="block text-6xl md:text-8xl text-pink-400">
+            <span className="block text-4xl md:text-8xl text-pink-400">
               Architecture
             </span>
           </h1>
