@@ -86,6 +86,7 @@ export default function Footer() {
               const Icon = link.icon
               return (
                 <li key={link.href}>
+                  <a
                   
                     href={link.href}
                     target={link.external ? '_blank' : undefined}
