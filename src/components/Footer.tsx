@@ -47,7 +47,7 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 mt-24">
+    <footer className="border-t border-white/10 mt-8">
       <div className="max-w-6xl mx-auto px-6 py-12 font-sans normal-case">
         <div className="mb-10 text-center md:text-left">
           <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
@@ -92,7 +92,7 @@ export default function Footer() {
                       href={link.href}
                       target={link.external ? '_blank' : undefined}
                       rel={link.external ? 'noreferrer' : undefined}
-                      className="flex items-center gap-2 hover:text-pink-400 transition-colors break-all"
+                      className="flex items-center gap-2 hover:text-pink-400 transition-colors break-words"
                     >
                       <Icon size={16} className="shrink-0" />
                       {link.label}
