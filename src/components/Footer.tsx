@@ -48,8 +48,8 @@ const contactLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 mt-24">
-      <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10 font-sans normal-case">
-        <div>
+      <div className="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3 md:gap-10 font-sans normal-case text-center md:text-left">
+        <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center gap-2 mb-4">
             <img src={logo} alt="Jac's Hub logo" className="h-7 w-7" />
             <span className="uppercase tracking-widest text-xs text-slate-400">
@@ -62,7 +62,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
             Quick links
           </h4>
@@ -77,7 +77,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
             Get in touch
           </h4>
@@ -86,14 +86,13 @@ export default function Footer() {
               const Icon = link.icon
               return (
                 <li key={link.href}>
-                  <a
                   
                     href={link.href}
                     target={link.external ? '_blank' : undefined}
                     rel={link.external ? 'noreferrer' : undefined}
-                    className="flex items-center gap-2 hover:text-pink-400 transition-colors"
+                    className="flex items-center gap-2 hover:text-pink-400 transition-colors break-all justify-center md:justify-start"
                   >
-                    <Icon size={16} />
+                    <Icon size={16} className="shrink-0" />
                     {link.label}
                   </a>
                 </li>
