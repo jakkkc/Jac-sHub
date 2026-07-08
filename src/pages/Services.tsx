@@ -48,8 +48,9 @@ export default function Services() {
       </p>
       <h1 className="uppercase text-5xl md:text-7xl leading-none mb-6">
         <span className="block text-slate-100">Pricing built for</span>
-        <span className="block bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
-          real Kenyan budgets
+        <span className="block">
+          <span className="text-blue-400">real Kenyan</span>{' '}
+          <span className="text-pink-400">budgets</span>
         </span>
       </h1>
       <p className="text-slate-400 font-sans normal-case max-w-xl mb-14 leading-relaxed">

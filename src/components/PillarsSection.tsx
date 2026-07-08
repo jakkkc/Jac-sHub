@@ -15,7 +15,7 @@ const pillars = [
     title: 'AI Expert',
     description:
       'AI is part of how I work and what I deliver. Faster development, smarter content, and practical AI guidance for your business too.',
-    accent: 'from-emerald-400 to-emerald-600',
+    accent: 'from-pink-400 to-blue-500',
   },
 ]
 
