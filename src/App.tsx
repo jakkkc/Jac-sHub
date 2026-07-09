@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import MouseTrail from './components/MouseTrail'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -13,18 +14,21 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/methodology" element={<Methodology />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/writing" element={<Writing />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <MouseTrail />
+      <div className="relative z-10">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/methodology" element={<Methodology />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </>
   )
 }

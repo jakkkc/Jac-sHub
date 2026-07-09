@@ -48,8 +48,8 @@ const contactLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 mt-8">
-      <div className="max-w-6xl mx-auto px-6 py-12 font-sans normal-case">
-        <div className="mb-10 text-center md:text-left">
+      <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 font-sans normal-case">
+        <div className="col-span-2 md:col-span-1 text-center md:text-left">
           <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
             <img src={logo} alt="Jac's Hub logo" className="h-7 w-7" />
             <span className="uppercase tracking-widest text-xs text-slate-400">
@@ -62,46 +62,44 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-10">
-          <div>
-            <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
-              Quick links
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              {quickLinks.map((link) => (
-                <li key={link.to}>
-                  <Link to={link.to} className="hover:text-pink-400 transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div>
+          <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
+            Quick links
+          </h4>
+          <ul className="space-y-2 text-sm text-slate-400">
+            {quickLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} className="hover:text-pink-400 transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <div>
-            <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
-              Get in touch
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              {contactLinks.map((link) => {
-                const Icon = link.icon
-                return (
-                  <li key={link.href}>
-                    <a
-                    
-                      href={link.href}
-                      target={link.external ? '_blank' : undefined}
-                      rel={link.external ? 'noreferrer' : undefined}
-                      className="flex items-center gap-2 hover:text-pink-400 transition-colors break-words"
-                    >
-                      <Icon size={16} className="shrink-0" />
-                      {link.label}
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+        <div>
+          <h4 className="uppercase text-xs tracking-widest text-slate-400 mb-4">
+            Get in touch
+          </h4>
+          <ul className="space-y-3 text-sm text-slate-400">
+            {contactLinks.map((link) => {
+              const Icon = link.icon
+              return (
+                <li key={link.href}>
+                  <a
+                  
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noreferrer' : undefined}
+                    className="flex items-center gap-2 hover:text-pink-400 transition-colors break-words"
+                  >
+                    <Icon size={16} className="shrink-0" />
+                    {link.label}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </div>
 
