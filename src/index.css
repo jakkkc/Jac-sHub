@@ -23,3 +23,18 @@ h1, h2, h3 {
   font-weight: 300;
   letter-spacing: 0.03em;
 }
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageFadeIn 0.45s ease-out;
+}

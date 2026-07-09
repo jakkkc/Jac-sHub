@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../components/Reveal'
 
 type Product = {
   name: string
@@ -78,27 +79,29 @@ export default function Products() {
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {products.map((product) => (
-          <div key={product.name} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col">
-            <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${product.accent} mb-6`} />
-            <p className="uppercase text-xs tracking-widest text-slate-500 mb-2 font-sans normal-case">
-              {product.status}
-            </p>
-            <h3 className="uppercase text-2xl tracking-wide mb-4 font-light text-slate-100">
-              {product.name}
-            </h3>
-            <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed mb-4 flex-1">
-              {product.description}
-            </p>
-            <p className="text-slate-600 font-sans normal-case text-xs mb-4">
-              {product.stack}
-            </p>
-            {product.cta && (
-              <Link to={product.cta.to} className="text-pink-400 font-sans normal-case text-sm hover:text-pink-300 transition-colors">
-                {product.cta.label} &rarr;
-              </Link>
-            )}
-          </div>
+        {products.map((product, index) => (
+          <Reveal key={product.name} delay={index * 80}>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col h-full hover:bg-white/10 hover:border-pink-400/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300">
+              <div className={`w-10 h-1 rounded-full bg-gradient-to-r ${product.accent} mb-6`} />
+              <p className="uppercase text-xs tracking-widest text-slate-500 mb-2 font-sans normal-case">
+                {product.status}
+              </p>
+              <h3 className="uppercase text-2xl tracking-wide mb-4 font-light text-slate-100">
+                {product.name}
+              </h3>
+              <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed mb-4 flex-1">
+                {product.description}
+              </p>
+              <p className="text-slate-600 font-sans normal-case text-xs mb-4">
+                {product.stack}
+              </p>
+              {product.cta && (
+                <Link to={product.cta.to} className="text-pink-400 font-sans normal-case text-sm hover:text-pink-300 transition-colors">
+                  {product.cta.label} &rarr;
+                </Link>
+              )}
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

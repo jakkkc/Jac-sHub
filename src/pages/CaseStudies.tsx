@@ -1,3 +1,5 @@
+import Reveal from '../components/Reveal'
+
 type CaseStudy = {
   name: string
   tag: string
@@ -74,32 +76,31 @@ export default function CaseStudies() {
       </p>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {caseStudies.map((study) => (
-          <div
-            key={study.name}
-            className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col"
-          >
-            <div
-              className={`w-10 h-1 rounded-full bg-gradient-to-r ${study.accent} mb-6`}
-            />
-            <p className="uppercase text-xs tracking-widest text-slate-500 mb-2 font-sans normal-case">
-              {study.tag}
-            </p>
-            <h3 className="uppercase text-2xl tracking-wide mb-4 font-light">
-              {study.name}
-            </h3>
-            <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed mb-6">
-              {study.summary}
-            </p>
-            <ul className="space-y-2 font-sans normal-case text-sm text-slate-300">
-              {study.points.map((point) => (
-                <li key={point} className="flex items-start gap-2">
-                  <span className="text-pink-400 mt-1">&#10003;</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {caseStudies.map((study, index) => (
+          <Reveal key={study.name} delay={index * 100}>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col h-full hover:bg-white/10 hover:border-pink-400/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300">
+              <div
+                className={`w-10 h-1 rounded-full bg-gradient-to-r ${study.accent} mb-6`}
+              />
+              <p className="uppercase text-xs tracking-widest text-slate-500 mb-2 font-sans normal-case">
+                {study.tag}
+              </p>
+              <h3 className="uppercase text-2xl tracking-wide mb-4 font-light">
+                {study.name}
+              </h3>
+              <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed mb-6">
+                {study.summary}
+              </p>
+              <ul className="space-y-2 font-sans normal-case text-sm text-slate-300">
+                {study.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2">
+                    <span className="text-pink-400 mt-1">&#10003;</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

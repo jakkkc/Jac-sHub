@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const pillars = [
   {
     title: 'Strategist',
@@ -23,21 +25,20 @@ export default function PillarsSection() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
       <div className="grid md:grid-cols-3 gap-6">
-        {pillars.map((pillar) => (
-          <div
-            key={pillar.title}
-            className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 transition-colors"
-          >
-            <div
-              className={`w-10 h-1 rounded-full bg-gradient-to-r ${pillar.accent} mb-6`}
-            />
-            <h3 className="uppercase text-2xl mb-3 tracking-wide font-light">
-              {pillar.title}
-            </h3>
-            <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed">
-              {pillar.description}
-            </p>
-          </div>
+        {pillars.map((pillar, index) => (
+          <Reveal key={pillar.title} delay={index * 120}>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-pink-400/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10 transition-all duration-300">
+              <div
+                className={`w-10 h-1 rounded-full bg-gradient-to-r ${pillar.accent} mb-6`}
+              />
+              <h3 className="uppercase text-2xl mb-3 tracking-wide font-light">
+                {pillar.title}
+              </h3>
+              <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed">
+                {pillar.description}
+              </p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

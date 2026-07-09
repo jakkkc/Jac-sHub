@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../components/Reveal'
 
 const steps = [
   {
@@ -53,25 +54,24 @@ export default function Methodology() {
       </p>
 
       <div className="space-y-6 mb-16">
-        {steps.map((step) => (
-          <div
-            key={step.number}
-            className="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-white/10 pb-6"
-          >
-            <div className="md:w-24 shrink-0">
-              <span className="text-3xl uppercase text-slate-600">
-                {step.number}
-              </span>
+        {steps.map((step, index) => (
+          <Reveal key={step.number} delay={index * 80}>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-white/10 pb-6 hover:border-pink-400/30 transition-colors">
+              <div className="md:w-24 shrink-0">
+                <span className="text-3xl uppercase text-slate-600">
+                  {step.number}
+                </span>
+              </div>
+              <div>
+                <h3 className="uppercase text-2xl tracking-wide mb-2 font-light text-slate-100">
+                  {step.title}
+                </h3>
+                <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed max-w-2xl">
+                  {step.description}
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="uppercase text-2xl tracking-wide mb-2 font-light text-slate-100">
-                {step.title}
-              </h3>
-              <p className="text-slate-400 font-sans normal-case text-sm leading-relaxed max-w-2xl">
-                {step.description}
-              </p>
-            </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 
@@ -104,7 +104,7 @@ export default function Methodology() {
         </p>
         <Link
           to="/contact"
-          className="inline-block bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full font-sans normal-case font-medium hover:opacity-90 transition-opacity"
+          className="inline-block bg-gradient-to-r from-pink-500 to-blue-500 text-white px-6 py-3 rounded-full font-sans normal-case font-medium hover:opacity-90 hover:scale-105 active:scale-95 transition-all"
         >
           Start with an audit
         </Link>
